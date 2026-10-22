@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {View, Text} from 'react-native';
 
-export default function App() {
+const Welcome = ({code,name})=> {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <View>
+        <Text>Welcome to {code} - {name}</Text>
+      </View>
   );
-}
+};
+//export default Welcome;
+class ModuleInfo extends React.Component {
+  render() {
+    return (
+        <View>
+          <Text></Text>
+          <Text>These are the Modules in this Semester</Text>
+          <Welcome code= "C346" name="Mobile App Development"/>
+          <Welcome code= "C105" name="Introduction to programing"/>
+          <Welcome code= "C337" name="Immersive Technologies"/>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+        </View>
+    )
+  }
+}
+export default ModuleInfo;
